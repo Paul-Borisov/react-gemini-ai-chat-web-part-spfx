@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "03c1b8dc-997c-4a85-8e48-22d930521188",
+  "alias": "GeminiAiChatWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportsFullBleed": true,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "059d8a8d-e0a5-4e2b-b19f-93f14dfdb5f7", // Advanced
+    "group": { "default": "Advanced" },
+    "title": { "default": "Gemini AI Chat" },
+    "description": { "default": "Gemini AI Chat web part" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "appId": "00000000-0000-0000-0000-000000000000", //Like 6ee7b6ff-dff5-411a-af40-fdc0b4ff19c7
+      "endpointBaseUrl": "https://tenant.azure-api.net/geminiai",
+      "spListUrl": "", // Default location when value is empty: https://<currentweburl>/Lists/dbChatsGemini
+      "apiKey": "",
+      "sharing": false,
+      "streaming": true,
+      "fullScreen": true,
+      "functions": false,
+      "highlight": true,
+      "highlightStyles": true,
+      "highlightStyleDefault": "stackoverflowDark",
+      "storageType": "splist",
+      "promptAtBottom": false,
+      "unlimitedHistoryLength": false,
+      "locale": ""
+    }
+  }]
+}

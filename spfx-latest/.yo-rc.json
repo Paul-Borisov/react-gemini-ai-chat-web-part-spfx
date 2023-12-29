@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.13.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.0",
+    "libraryName": "gemini-ai-chat",
+    "libraryId": "7011b8c6-efb9-4fd6-a084-7ecce6320ab2",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "gemini-ai-chat",
+    "solutionShortDescription": "gemini-ai-chat description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "gemini-ai-chat",
+    "title": "Gemini AI Chat Web Part",
+    "id": "7011b8c6-efb9-4fd6-a084-7ecce6320ab2",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Paul Borisov",
+      "websiteUrl": "https://www.linkedin.com/in/paul-borisov-b412a8171/",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "geminiaiwp",
+        "scope": "user_impersonation"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "People.Read"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.Read.All"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "Gemini AI Chat"
+      },
+      "longDescription": {
+        "default": "Gemini AI Chat"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "gemini-ai-chat Feature",
+        "description": "The feature that activates elements of the gemini-ai-chat solution.",
+        "id": "c36a92bc-8965-4f14-b235-a0094d13096b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/gemini-ai-chat.sppkg"
+  }
+}

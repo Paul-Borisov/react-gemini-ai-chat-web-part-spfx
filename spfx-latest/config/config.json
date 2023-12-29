@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "azure-open-ai-chat-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/components/GeminiAiChatLoader.js",
+          "manifest": "./src/settings/GeminiAiChat.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GeminiAiChatWebPartStrings": "lib/loc/{locale}.js"
+  }
+}
