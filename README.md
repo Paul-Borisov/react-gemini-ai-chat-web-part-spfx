@@ -5,14 +5,14 @@ This is a Gemini AI Chat Web Part for SharePoint Online, offering a user experie
 
 **Data Privacy**
 
-Gemini AI is the latest and most capable AI model published by Google. 
-- As of December 2023, the European and UK zones do not have access to Google AI Studio, which is used to generate an API key for direct access to the REST API of Gemini AI.
-- European and UK developers are limited to using Vertex AI with Google's OAuth.
-- You can use any VPN service to connect to US zone and obtain a free API key for Gemini AI via Google AI Studio. I have used a free version of Proton VPN to get connected from Finland.
+Gemini AI is the latest and most capable AI model published by Google. Any data provided to endpoints of Gemini AI goes to US service locations. Gemini AI is not yet [GDPR-compliant](https://thenextweb.com/news/google-gemini-ai-unavailable-europe-uk).
+- RESTful endpoints of Gemini AI can be accessed using a free API key generated via [Google AI Studio](https://makersuite.google.com/app/apikey).
 
-Any data provided to endpoints of Gemini AI goes to US service locations. Gemini AI is not yet [GDPR-compliant](https://thenextweb.com/news/google-gemini-ai-unavailable-europe-uk).
-
-This web part interacts with **Gemini AI** endpoints that can be optionally published via Azure API Management service (APIM) deployed to US zone to suppress location-based access restrictions.
+**Users in Europe and UK.**
+As of December 2023, users from European and UK locations do not have direct access to Google AI Studio.
+- To obtain the API key from those locations, you can use any VPN service to connect to permitted ones like US.
+- To access the endpoints with the API key from restricted locations you should also use a VPN connection, which is not convenient.
+- This web part supports the default option to interact with **Gemini AI** endpoints published via Azure API Management service instance (APIM), which can be deployed to US zone to suppress location-based access restrictions.
 
 - APIM consistently validates identities of SharePoint users for each individual request. If the request originates from authorized domains, APIM retrieves the **api-key** from the secure vault and injects it into the request before forwarding it to the AI endpoint. This process ensures that the api-key does not get exposed in the browser.
 - Chats are private and visible only to their creators. Creators have the option to share their chats when this feature is enabled in the web part settings (disabled by default).
