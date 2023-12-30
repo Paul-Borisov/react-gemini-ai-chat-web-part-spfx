@@ -41,5 +41,4 @@ The integrations available in the first release are similar to the ones found in
 
 - The option to use voice input to prompt text is available.
 - Optional data encryption for Chats' data.
-- Speech synthesis to read out AI-generated texts by default
-  - The standard Web Speech API requires selecting the preferred language; using default page language is not always optimal.
+- Speech synthesis to read out AI-generated texts by default. The standard Web Speech API requires selecting the preferred language; using default page language is not always optimal.
