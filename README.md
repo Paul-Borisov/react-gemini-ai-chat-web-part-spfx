@@ -10,11 +10,11 @@ Gemini AI is the latest and most capable AI model published by Google. Any data 
 
 **Key features**
 - Default support of Gemini Pro and Gemini Pro Vision
-- Chat history stored into a SharePoint Custom List
+- Chat history stored into a SharePoint Custom List with the optional data encryption (off by default)
+- Integration with Azure API Management Service to provide seamless access from European and UK locations; more details are given below.
 - Global and Private Chat Sharing for selected Azure AD accounts
-- Integration with Azure API Management Service
-- Code Highlighting with Configurable Styles
 - Full-Screen Mode
+- Code Highlighting with Configurable Styles
 - Unlimited Length of Chat History (Configurable)
 - Upper and Lower side positioning for the Prompt Text Area
 - Analysis of an uploaded PDF and summarization of its content (gemini-pro)
