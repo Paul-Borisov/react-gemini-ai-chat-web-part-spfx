@@ -33,16 +33,14 @@ $action-color: $dark;
 .geminiailogo {
   /*background-color: $action-color;*/
   border: 1px solid #ccc;
-  background-color: lightcyan;
-  font-weight: 600;
   color: #fff;
-  padding: 0 3px;
-  width: 30px;
+  width: 36px;
   height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
   &.userlogo {
+    border: 0px;
     background-color: $dark;
   }
 }

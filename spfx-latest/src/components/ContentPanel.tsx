@@ -684,7 +684,7 @@ const ContentPanel: FunctionComponent<IContentPanelProps> = ({ props }) => {
           <div key={index} className={styles.responseRow}>
             <div className={isAi ? styles.logo : styles.userLogo}>
               {isAi ? (
-                Icons.getGeminiAiLogo2(strings.TextChat)
+                Icons.getGeminiAiLogo(strings.TextChat)
               ) : (
                 <FontIcon iconName={'UserFollowed'} className={styles.userIcon} />
               )}
