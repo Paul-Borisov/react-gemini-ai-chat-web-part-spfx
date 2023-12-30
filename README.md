@@ -27,11 +27,21 @@ In the simplest case, you can also use direct access to Gemini AI endpoints, con
 - If you are located in Europe or UK, you should use a VPN to connect to Gemini AI endpoints in this setup.
 
 **Key features**
+- Default support of Gemini Pro and Gemini Pro Vision
+- Chat history stored into a SharePoint Custom List
+- Global and Private Chat Sharing for selected Azure AD accounts
+- Integration with Azure API Management Service
+- Code Highlighting with Configurable Styles
+- Full-Screen Mode
+- Unlimited Length of Chat History (Configurable)
+- Upper and Lower side positioning for the Prompt Text Area
 - Analysis of an uploaded PDF and summarization of its content (gemini-pro)
 - Analysis of uploaded images and description of their content (gemini-pro-vision)
-- The option to use voice input to prompt text is available.
-- Speech synthesis to read out AI-generated texts by default. The standard Web Speech API requires selecting the preferred language; using default page language is not always optimal.
-- Optional data encryption for Chats' data.
+- Optional dropdown box with examples for prompt text.
+- Optional voice input to prompt text.
+- Optional speech synthesis to read out AI-generated texts by default. The standard Web Speech API requires selecting the preferred language; using default page language is not always optimal.
+- Optional data encryption for Chats data.
+- Configurable Formats for Dates: Default is Finnish, which can be changed to "en-US" in Web Part Settings.
 
 **Data integrations**
 The web part supports optional integrations with company data via Function calling. These integrations are disabled by default and must be explicitly enabled in the web part settings.
