@@ -24,49 +24,22 @@ In the simplest case, you can also use direct access to Gemini AI endpoints, con
 - **This setup, while the least secure, can provide a quicker start.** It is not recommended for production use, but it can be used for quick tests or in situations where you do not have access to Azure API Management.
 - The stored key is encrypted in the web part properties and displayed as \*\*\* in the Property Pane.
   However, it will travel in browser requests and can be viewed within the DEV tools > Network > Request headers.
-- If you are located in Europe or UK, you should use a VPN to connect to 
+- If you are located in Europe or UK, you should use a VPN to connect to Gemini AI endpoints in this setup.
 
 The web part supports optional integrations with company data. For security reasons, these integrations are disabled by default and must be explicitly enabled in the web part settings.
 
-The integrations available in this release include:
-
+The integrations available in the first release are similar to the ones found in [Azure OpenAI Chat Web Part](https://github.com/Paul-Borisov/Azure-OpenAI-Chat-Webpart) and include:
 - SharePoint Search
 - Company Users
 - Local Date and Time
 - Analysis of an uploaded PDF and summarization of its content
 - Analysis of uploaded images and description of their content
-- Version 1.1 released on Dec 11, 2023. It includes the following additional options:
-  - Search on the Internet: Bing and Google (+ Reddit).
-    - The configuration is supported in two alternatives:
-      - 1. Using the additional APIM-endpoints https://**tenant**.azure-api.net/**bing** and/or https://**tenant**.azure-api.net/**google**
-      - 2. Using the direct Bing and Google endpoints with own **api-key** values stored in the web part settings (less secure).
+- Search on the Internet: Bing and Google (+ Reddit).
+  - The configuration is supported in two alternatives:
+    - 1. Using the additional APIM-endpoints https://**tenant**.azure-api.net/**bing** and/or https://**tenant**.azure-api.net/**google**
+    - 2. Using the direct Bing and Google endpoints with own **api-key** values stored in the web part settings (less secure).
 
-  - Image generation from the prompt text. This option supports Dalle 3.
-
-    - The configuration is supported in three alternatives:
-      - 1. Using the additional APIM-endpoint https://**tenant**.azure-api.net/openai/**dalle**
-      - 2. Using the Azure OpenAI endpoint https://**tenant**.openai.azure.com/openai/deployments/dalle3/images/generations?api-version=2023-12-01-preview with **api-key** stored in the web part settings (less secure).
-        - The model Dalle3 is available for the deployment in Swedish Central zone (as of December 2023).
-      - 3. Using the Native OpenAI endpoint https://**api.openai.com**/v1/images/generations with **api-key** stored in the web part settings (less secure).
-
-  - The option to use voice input to prompt text is available.
-
-- Version 1.2 released on Dec 23, 2023. It includes the following additional options:
-  - Data encryption for all storage types.
-    - SharePoint list
-    - Database
-    - Local Storage
-    - Seamless support of the Chat Sharing option for all storage types
- 
-  - GPT-4 Vision APIM endpoint (/openai4/vision).
-    
-  - Speech synthesis to read out AI-generated texts by default
-    - The standard Web Speech API requires selecting the preferred language; using default page language is not always optimal. This default option is used when Native OpenAI text-to-speech model is not available.
-    - Azure OpenAI does not yet have support for text-to-speech models (as of Dec 2023).
-      
-  - /tts APIM endpoint (/openainative/tts) and Native OpenAI text-to-speech model for AI-generated texts.
-    - In case of using Native OpenAI endpoints - direct URL or APIM-based operation - the native text-to-speech model automatically handles text that contains mixed languages.
-      
-### Full-Scale Setup
-
-![Data access diagram](docs/data-access-diagram.png "Data access diagram")
+- The option to use voice input to prompt text is available.
+- Optional data encryption for Chats' data.
+- Speech synthesis to read out AI-generated texts by default
+  - The standard Web Speech API requires selecting the preferred language; using default page language is not always optimal.
