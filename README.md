@@ -49,7 +49,9 @@ As of December 2023, users from European and UK locations do not have direct acc
 
 This web part supports the default option to interact with **Gemini AI** endpoints published via Azure API Management service instance (APIM)
 - This instance can be deployed to US zone to suppress location-based access restrictions.
-- Base URL for Gemini AI: https://**apiminatance**.azure-api.net/**geminiai**
+- Base URL for Gemini AI: https://**apiminatance**.azure-api.net/**geminiai**. Two operations must be created under the base:
+  - chat
+  - vision
 - APIM consistently validates identities of SharePoint users for each individual request. If the request originates from authorized domains, APIM retrieves the **api-key** from the secure vault and injects it into the request before forwarding it to the AI endpoint. This process ensures that the api-key does not get exposed in the browser.
 
 To configure the SharePoint list storage use the web part properties and
