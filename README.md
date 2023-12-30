@@ -26,19 +26,21 @@ In the simplest case, you can also use direct access to Gemini AI endpoints, con
   However, it will travel in browser requests and can be viewed within the DEV tools > Network > Request headers.
 - If you are located in Europe or UK, you should use a VPN to connect to Gemini AI endpoints in this setup.
 
-The web part supports optional integrations with company data. For security reasons, these integrations are disabled by default and must be explicitly enabled in the web part settings.
+**Key features**
+- Analysis of an uploaded PDF and summarization of its content (gemini-pro)
+- Analysis of uploaded images and description of their content (gemini-pro-vision)
+- The option to use voice input to prompt text is available.
+- Speech synthesis to read out AI-generated texts by default. The standard Web Speech API requires selecting the preferred language; using default page language is not always optimal.
+- Optional data encryption for Chats' data.
+
+**Data integrations**
+The web part supports optional integrations with company data via Function calling. These integrations are disabled by default and must be explicitly enabled in the web part settings.
 
 The integrations available in the first release are similar to the ones found in [Azure OpenAI Chat Web Part](https://github.com/Paul-Borisov/Azure-OpenAI-Chat-Webpart) and include:
 - SharePoint Search
 - Company Users
 - Local Date and Time
-- Analysis of an uploaded PDF and summarization of its content (gemini-pro)
-- Analysis of uploaded images and description of their content (gemini-pro-vision)
 - Search on the Internet: Bing and Google (+ Reddit).
   - The configuration is supported in two alternatives:
     - 1. Using the additional APIM-endpoints https://**tenant**.azure-api.net/**bing** and/or https://**tenant**.azure-api.net/**google**
     - 2. Using the direct Bing and Google endpoints with own **api-key** values stored in the web part settings (less secure).
-
-- The option to use voice input to prompt text is available.
-- Optional data encryption for Chats' data.
-- Speech synthesis to read out AI-generated texts by default. The standard Web Speech API requires selecting the preferred language; using default page language is not always optimal.
