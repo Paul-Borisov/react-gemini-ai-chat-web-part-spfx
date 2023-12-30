@@ -29,7 +29,7 @@ Gemini AI is the latest and most capable AI model published by Google. Any data 
 
 The web part supports optional integrations with external data using the Function Calling feature of Gemini Pro. These integrations are disabled by default and must be enabled in the web part settings.
 
-The integrations available in the first release are similar to the ones found in [Azure OpenAI Chat Web Part](https://github.com/Paul-Borisov/Azure-OpenAI-Chat-Webpart) and include:
+The integrations available in the first release include:
 - SharePoint Search
 - Company Users
 - Local Date and Time
