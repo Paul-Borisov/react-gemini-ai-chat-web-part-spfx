@@ -45,14 +45,22 @@ As of December 2023, users from European and UK locations do not have direct acc
 - To obtain the API key from those locations, you can use any VPN service to connect to permitted ones like US.
 - To access the endpoints with the API key from restricted locations you should also use a VPN connection, which is not convenient.
 
+**Configuration**
+
 This web part supports the default option to interact with **Gemini AI** endpoints published via Azure API Management service instance (APIM)
 - This instance can be deployed to US zone to suppress location-based access restrictions.
 - APIM consistently validates identities of SharePoint users for each individual request. If the request originates from authorized domains, APIM retrieves the **api-key** from the secure vault and injects it into the request before forwarding it to the AI endpoint. This process ensures that the api-key does not get exposed in the browser.
+
+To configure the storage use the web part properties and
+
+- Click on the Create button under SharePoint list URL
+- Click on the Create button under Image library URL
 
 Chats are private and visible only to their creators. Creators have the option to share their chats when this feature is enabled in the web part settings (disabled by default).
 - Creators can share their chats with everyone or only with specific people in the company.
 
 In the simplest case, you can also use direct access to Gemini AI endpoints, configured with an API key explicitly stored in the web part properties.
+- Base URL for Gemini AI: https://generativelanguage.googleapis.com/v1beta
 - **This setup, while the least secure, can provide a quicker start.** It is not recommended for production use, but it can be used for quick tests or in situations where you do not have access to Azure API Management.
 - The stored key is encrypted in the web part properties and displayed as \*\*\* in the Property Pane.
   However, it will travel in browser requests and can be viewed within the DEV tools > Network > Request headers.
