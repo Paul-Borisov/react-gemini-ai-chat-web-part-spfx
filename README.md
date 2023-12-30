@@ -8,24 +8,6 @@ This is a Gemini AI Chat Web Part for SharePoint Online, offering a user experie
 Gemini AI is the latest and most capable AI model published by Google. Any data provided to endpoints of Gemini AI goes to US service locations. Gemini AI is not yet [GDPR-compliant](https://thenextweb.com/news/google-gemini-ai-unavailable-europe-uk).
 - RESTful endpoints of Gemini AI can be accessed using a free API key generated via [Google AI Studio](https://makersuite.google.com/app/apikey).
 
-**Users in Europe and UK.**
-As of December 2023, users from European and UK locations do not have direct access to Google AI Studio.
-- To obtain the API key from those locations, you can use any VPN service to connect to permitted ones like US.
-- To access the endpoints with the API key from restricted locations you should also use a VPN connection, which is not convenient.
-
-This web part supports the default option to interact with **Gemini AI** endpoints published via Azure API Management service instance (APIM)
-- This instance can be deployed to US zone to suppress location-based access restrictions.
-- APIM consistently validates identities of SharePoint users for each individual request. If the request originates from authorized domains, APIM retrieves the **api-key** from the secure vault and injects it into the request before forwarding it to the AI endpoint. This process ensures that the api-key does not get exposed in the browser.
-
-Chats are private and visible only to their creators. Creators have the option to share their chats when this feature is enabled in the web part settings (disabled by default).
-- Creators can share their chats with everyone or only with specific people in the company.
-
-In the simplest case, you can also use direct access to Gemini AI endpoints, configured with an API key explicitly stored in the web part properties.
-- **This setup, while the least secure, can provide a quicker start.** It is not recommended for production use, but it can be used for quick tests or in situations where you do not have access to Azure API Management.
-- The stored key is encrypted in the web part properties and displayed as \*\*\* in the Property Pane.
-  However, it will travel in browser requests and can be viewed within the DEV tools > Network > Request headers.
-- If you are located in Europe or UK, you should use a VPN to connect to Gemini AI endpoints in this setup.
-
 **Key features**
 - Default support of Gemini Pro and Gemini Pro Vision
 - Chat history stored into a SharePoint Custom List
@@ -44,6 +26,7 @@ In the simplest case, you can also use direct access to Gemini AI endpoints, con
 - Configurable Formats for Dates: Default is Finnish, which can be changed to "en-US" in Web Part Settings.
 
 **Data integrations**
+
 The web part supports optional integrations with company data via Function calling. These integrations are disabled by default and must be explicitly enabled in the web part settings.
 
 The integrations available in the first release are similar to the ones found in [Azure OpenAI Chat Web Part](https://github.com/Paul-Borisov/Azure-OpenAI-Chat-Webpart) and include:
@@ -54,3 +37,21 @@ The integrations available in the first release are similar to the ones found in
   - The configuration is supported in two alternatives:
     - 1. Using the additional APIM-endpoints https://**tenant**.azure-api.net/**bing** and/or https://**tenant**.azure-api.net/**google**
     - 2. Using the direct Bing and Google endpoints with own **api-key** values stored in the web part settings (less secure).
+
+**Users in Europe and UK.**
+As of December 2023, users from European and UK locations do not have direct access to Google AI Studio.
+- To obtain the API key from those locations, you can use any VPN service to connect to permitted ones like US.
+- To access the endpoints with the API key from restricted locations you should also use a VPN connection, which is not convenient.
+
+This web part supports the default option to interact with **Gemini AI** endpoints published via Azure API Management service instance (APIM)
+- This instance can be deployed to US zone to suppress location-based access restrictions.
+- APIM consistently validates identities of SharePoint users for each individual request. If the request originates from authorized domains, APIM retrieves the **api-key** from the secure vault and injects it into the request before forwarding it to the AI endpoint. This process ensures that the api-key does not get exposed in the browser.
+
+Chats are private and visible only to their creators. Creators have the option to share their chats when this feature is enabled in the web part settings (disabled by default).
+- Creators can share their chats with everyone or only with specific people in the company.
+
+In the simplest case, you can also use direct access to Gemini AI endpoints, configured with an API key explicitly stored in the web part properties.
+- **This setup, while the least secure, can provide a quicker start.** It is not recommended for production use, but it can be used for quick tests or in situations where you do not have access to Azure API Management.
+- The stored key is encrypted in the web part properties and displayed as \*\*\* in the Property Pane.
+  However, it will travel in browser requests and can be viewed within the DEV tools > Network > Request headers.
+- If you are located in Europe or UK, you should use a VPN to connect to Gemini AI endpoints in this setup.
