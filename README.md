@@ -36,7 +36,7 @@ The integrations available in the first release include:
 - Local Date and Time
 - Search on the Internet: Bing and Google (+ Reddit).
   - The configuration is supported in two alternatives:
-    - 1. Using the additional APIM-endpoints https://**tenant**.azure-api.net/**bing** and/or https://**tenant**.azure-api.net/**google**
+    - 1. Using the additional APIM-endpoints https://**apiminatance**.azure-api.net/**bing** and/or https://**apiminatance**.azure-api.net/**google**
     - 2. Using the direct Bing and Google endpoints with own **api-key** values stored in the web part settings (less secure).
 
 **Users in Europe and UK**
@@ -49,6 +49,7 @@ As of December 2023, users from European and UK locations do not have direct acc
 
 This web part supports the default option to interact with **Gemini AI** endpoints published via Azure API Management service instance (APIM)
 - This instance can be deployed to US zone to suppress location-based access restrictions.
+- Base URL for Gemini AI: https://**apiminatance**.azure-api.net/**geminiai**
 - APIM consistently validates identities of SharePoint users for each individual request. If the request originates from authorized domains, APIM retrieves the **api-key** from the secure vault and injects it into the request before forwarding it to the AI endpoint. This process ensures that the api-key does not get exposed in the browser.
 
 To configure the SharePoint list storage use the web part properties and
