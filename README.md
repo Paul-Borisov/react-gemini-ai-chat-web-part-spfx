@@ -32,8 +32,8 @@ The integrations available in the first release are similar to the ones found in
 - SharePoint Search
 - Company Users
 - Local Date and Time
-- Analysis of an uploaded PDF and summarization of its content
-- Analysis of uploaded images and description of their content
+- Analysis of an uploaded PDF and summarization of its content (gemini-pro)
+- Analysis of uploaded images and description of their content (gemini-pro-vision)
 - Search on the Internet: Bing and Google (+ Reddit).
   - The configuration is supported in two alternatives:
     - 1. Using the additional APIM-endpoints https://**tenant**.azure-api.net/**bing** and/or https://**tenant**.azure-api.net/**google**
