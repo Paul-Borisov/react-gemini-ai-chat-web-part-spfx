@@ -5,9 +5,9 @@ This is a Gemini AI Chat Web Part for SharePoint Online, offering a user experie
 
 **Data Privacy**
 
-Gemini AI is the latest and most capable AI model published by Google in December 2023. Google provides optional access to its API to the limited number of locations. 
-- As of December 2023, European and UK zones do not have access to Google AI Studio, which would allow them to generate an API key for Gemini AI REST API.
-- European developers are limited to using Vertex AI with Google's OAuth.
+Gemini AI is the latest and most capable AI model published by Google. 
+- As of December 2023, the European and UK zones do not have access to Google AI Studio, which is used to generate an API key for direct access to the REST API of Gemini AI.
+- European and UK developers are limited to using Vertex AI with Google's OAuth.
 - You can use any VPN service to connect to US zone and obtain a free API key for Gemini AI via Google AI Studio. I have used a free version of Proton VPN to get connected from Finland.
 
 Any data provided to endpoints of Gemini AI goes to US service locations. Gemini AI is not yet [GDPR-compliant](https://thenextweb.com/news/google-gemini-ai-unavailable-europe-uk).
