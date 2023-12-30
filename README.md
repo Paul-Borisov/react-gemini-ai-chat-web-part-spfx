@@ -51,7 +51,7 @@ This web part supports the default option to interact with **Gemini AI** endpoin
 - This instance can be deployed to US zone to suppress location-based access restrictions.
 - APIM consistently validates identities of SharePoint users for each individual request. If the request originates from authorized domains, APIM retrieves the **api-key** from the secure vault and injects it into the request before forwarding it to the AI endpoint. This process ensures that the api-key does not get exposed in the browser.
 
-To configure the storage use the web part properties and
+To configure the SharePoint list storage use the web part properties and
 
 - Click on the Create button under SharePoint list URL
 - Click on the Create button under Image library URL
