@@ -13,8 +13,8 @@ As of December 2023, users from European and UK locations do not have direct acc
 - To obtain the API key from those locations, you can use any VPN service to connect to permitted ones like US.
 - To access the endpoints with the API key from restricted locations you should also use a VPN connection, which is not convenient.
 
-This web part supports the default option to interact with **Gemini AI** endpoints published via Azure API Management service instance (APIM), which can be deployed to US zone to suppress location-based access restrictions.
-
+This web part supports the default option to interact with **Gemini AI** endpoints published via Azure API Management service instance (APIM)
+- This instance can be deployed to US zone to suppress location-based access restrictions.
 - APIM consistently validates identities of SharePoint users for each individual request. If the request originates from authorized domains, APIM retrieves the **api-key** from the secure vault and injects it into the request before forwarding it to the AI endpoint. This process ensures that the api-key does not get exposed in the browser.
 - Chats are private and visible only to their creators. Creators have the option to share their chats when this feature is enabled in the web part settings (disabled by default).
 - Creators can share their chats with everyone or only with specific people in the company.
