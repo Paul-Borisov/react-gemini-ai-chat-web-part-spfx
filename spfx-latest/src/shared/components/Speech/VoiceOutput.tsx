@@ -31,7 +31,7 @@ const VoiceOutput: React.FunctionComponent<IVoiceOutput> = (props) => {
       const voices = availableVoices?.filter((v) => v.lang === locale);
       if (voices.length) {
         const firstNatural = voices.find((v) => /natural/i.test(v.voiceURI) || /natural/i.test(v.name));
-        utterance.voice = firstNatural ?? voices[0];
+        utterance.voice = firstNatural ?? voices[voices.length > 1 ? 1 : 0];
       }
       const cleanup = () => setStarted(false);
       utterance.onend = () => cleanup();
