@@ -24,17 +24,12 @@ export default class AzureServiceResponseMapper {
 
     const allIds = [];
     const allFunctions = [];
-    if (isStreaming) {
-      if (data.choices[0].delta?.tool_calls) {
-        allFunctions.push(...data.choices[0].delta.tool_calls.map((tool) => tool.function).filter((f) => f));
-        allIds.push(...data.choices[0].delta.tool_calls.filter((t) => t.type === 'function').map((tool) => tool.id));
-      } else if (data.choices[0].delta?.function_call) {
-        allFunctions.push(data.choices[0].delta.function_call);
-      }
-    } else {
-      if (data.candidates[0].content?.parts) {
-        allFunctions.push(...data.candidates[0].content.parts.map((part) => part.functionCall).filter((f) => f));
-      }
+    if (
+      data.candidates?.length > 0 &&
+      data.candidates[0].content?.parts?.length > 0 &&
+      data.candidates[0].content.parts[0].functionCall
+    ) {
+      allFunctions.push(...data.candidates[0].content.parts.map((part) => part.functionCall).filter((f) => f));
     }
     for (let i = 0; i < allFunctions.length; i++) {
       const id = allIds.length > i ? allIds[i] : undefined;
@@ -42,7 +37,7 @@ export default class AzureServiceResponseMapper {
       if (func) {
         let singleFunction: IFunctionCalling;
         if (func.name || functionCalling.length === 0) {
-          singleFunction = { id: id, name: func.name, arguments: '' };
+          singleFunction = { id: id, name: func.name ?? 'emptyFunction', arguments: '' };
           functionCalling.push(singleFunction);
         } else {
           singleFunction = functionCalling[functionCalling.length - 1];

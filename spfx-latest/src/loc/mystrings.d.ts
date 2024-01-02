@@ -62,7 +62,6 @@ declare interface IGeminiAiChatWebPartStrings {
   TextFullScreen: string;
   TextGeminiPro: string;
   TextGeminiProVision: string;
-  TextGpt4Turbo: string;
   TextHideMySharedChats: string;
   TextInvalidListUrl: string;
   TextLanguage: string;

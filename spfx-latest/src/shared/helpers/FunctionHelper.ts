@@ -47,6 +47,7 @@ export default class FunctionHelper {
     searchOnInternet: this.searchOnInternet,
     searchOnBing: this.searchOnInternet,
     searchOnGoogle: this.searchOnGoogle,
+    emptyFunction: this.emptyFunction,
     //generateImage: this.generateImage,
   };
 
@@ -57,7 +58,7 @@ export default class FunctionHelper {
     for (let i = 0; i < allFunctions.length; i++) {
       const functionCalling = allFunctions[i];
       if (functionCalling?.name) {
-        const func = this.available[functionCalling.name];
+        const func = this.available[functionCalling.name] ?? this.available['emptyFunction'];
         if (func) {
           let args;
           try {
@@ -95,7 +96,7 @@ export default class FunctionHelper {
             {
               functionCall: {
                 name: func.name,
-                args: func.arguments,
+                args: typeof func.arguments === 'string' ? JSON.parse(func.arguments) : func.arguments,
               },
             },
           ],
@@ -121,6 +122,12 @@ export default class FunctionHelper {
     });
 
     return extendedMessages;
+  }
+
+  // The stab function, which tries to address halucinations of Gemini AI Beta.
+  // Sometimes Gemini AI Beta demands calling a nameless function with empty parameters.
+  private async emptyFunction(args: {}): Promise<string> {
+    return Promise.resolve('No results.');
   }
 
   private async companyUsers(args: { myColleagues: boolean }): Promise<string> {

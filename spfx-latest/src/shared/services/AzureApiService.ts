@@ -18,7 +18,8 @@ enum Operations {
   // These operations with sub-URLs must be configured in APIM below APIM > GeminiAI > All operations.
   StandardTextModel = '/chat', // Gemini Pro-turbo (URL reads as https://customer.azure-api.net/geminiai/chat)
   StandardTextModelStream = '/chatstream', // Gemini Pro-turbo (URL reads as https://customer.azure-api.net/geminiai/chatstream)
-  StandardTextModelVision = '/vision', // gpt-4-vision-preview (URL reads as https://customer.azure-api.net/geminiai/vision)
+  StandardTextModelVision = '/vision', // gemini-pro-visionw (URL reads as https://customer.azure-api.net/geminiai/vision)
+  StandardTextModelVisionStream = '/visionstream', //  gemini-pro-vision (URL reads as https://customer.azure-api.net/geminiai/visionstream)
   // This operation must be configured in APIM below APIM > Bing > All operations.
   BingSearch = '/bing/search',
   // This operation must be configured in APIM below APIM > Google > All operations.
@@ -101,7 +102,7 @@ export default class AzureApiService {
       //Lower temperatures are good for prompts that require a more deterministic or less open-ended response,
       //while higher temperatures can lead to more diverse or creative results. A temperature of 0 is deterministic,
       //meaning that the highest probability response is always selected.
-      temperature: 0.8,
+      temperature: 0.9,
       //The topK parameter changes how the model selects tokens for output. A topK of 1 means the selected token
       //is the most probable among all the tokens in the model's vocabulary (also called greedy decoding),
       //while a topK of 3 means that the next token is selected from among the 3 most probable using the temperature.
@@ -129,7 +130,7 @@ export default class AzureApiService {
 
     if (isVision) {
       commonParameters.maxOutputTokens = GeminiModelTokenLimits[GeminiModels.Vision];
-      commonParameters.temperature = 0.4;
+      commonParameters.temperature = 0.8;
       commonParameters.topK = 32;
     }
 
@@ -144,7 +145,9 @@ export default class AzureApiService {
         targetUrl = `${
           baseUrl +
           (isVision
-            ? Operations.StandardTextModelVision
+            ? stream
+              ? Operations.StandardTextModelVisionStream
+              : Operations.StandardTextModelVision
             : stream
             ? Operations.StandardTextModelStream
             : Operations.StandardTextModel)
@@ -184,6 +187,9 @@ export default class AzureApiService {
           ],
         });
       }
+    }
+    while (messages.length > 1 && messages[messages.length - 2].role === 'user') {
+      messages.splice(messages.length - 2, 1);
     }
 
     const functionCaller = !isVision ? new FunctionHelper() : undefined;
@@ -550,9 +556,9 @@ export default class AzureApiService {
 
     if (response.ok) {
       const json = await response.json();
-      const keys = /gpt-(4|5|6)-(512k|256k|128k|64k|32k|1106|turbo)/i.test(model)
+      const keys = /-pro$/i.test(model)
         ? ['news', 'webPages', 'relatedSearches', 'images', 'videos']
-        : /-16k/i.test(model)
+        : /-vision$/i.test(model)
         ? ['news', 'webPages', 'relatedSearches']
         : ['news'];
 
@@ -606,9 +612,9 @@ export default class AzureApiService {
 
     if (response.ok) {
       const json = await response.json();
-      const keys = /gpt-(4|5|6)-(512k|256k|128k|64k|32k|1106|turbo)/i.test(model)
+      const keys = /-pro$/i.test(model)
         ? ['title', 'link', 'displayLink', 'snippet', 'pagemap.metatags', 'pagemap.cse_image']
-        : /-16k/i.test(model)
+        : /-vision$/i.test(model)
         ? ['title', 'link', 'displayLink']
         : ['title', 'link'];
       const results = SearchResultMapper.mapCustomSearchResultsOfGoogle(json, keys);

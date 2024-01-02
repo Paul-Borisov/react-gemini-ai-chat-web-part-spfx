@@ -416,7 +416,7 @@ const ContentPanel: FunctionComponent<IContentPanelProps> = ({ props }) => {
     Object.keys(pdfFileContent).forEach((fileName) => {
       let content = pdfFileContent[fileName];
       if (!content) return;
-      const docName = `\n<!--${fileName}-->\n`;
+      const docName = `\n<!--The file name is ${fileName}-->\n`;
       if (
         chatHistoryParams.maxContentLength <
         requestText.length + returnValue.length + docName.length + content.length + '<!---->'.length
@@ -683,11 +683,7 @@ const ContentPanel: FunctionComponent<IContentPanelProps> = ({ props }) => {
         <div className={styles.responseRowPlaceholder}>
           <div key={index} className={styles.responseRow}>
             <div className={isAi ? styles.logo : styles.userLogo}>
-              {isAi ? (
-                Icons.getGeminiAiLogo(strings.TextChat)
-              ) : (
-                <FontIcon iconName={'UserFollowed'} className={styles.userIcon} />
-              )}
+              {isAi ? Icons.getGeminiAiLogo() : <FontIcon iconName={'UserFollowed'} className={styles.userIcon} />}
             </div>
             {isAi ? (
               props.highlight ? (

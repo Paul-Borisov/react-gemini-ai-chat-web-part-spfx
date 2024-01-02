@@ -12,7 +12,7 @@ export interface IGeminiAiChatProps {
   webPartWidth: number;
   // Azure App registration (Client ID) to authenticate SPFx requests. It must match with package-solution.json > webApiPermissionRequests > resource nane
   appId: string;
-  // Base endpoint URL of APIM sevice API for GPT3 or Gemini AI service (if you provide api-key)
+  // Base endpoint URL of APIM sevice API for Gemini AI service (if you provide api-key)
   endpointBaseUrl: string;
   // Optional SharePoint image library URL if image generation selected. Default is <currentsiteurl>/ChatImages
   spImageLibraryUrl: string;

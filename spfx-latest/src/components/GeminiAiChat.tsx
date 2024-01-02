@@ -5,7 +5,7 @@ import { IItemConfig } from 'shared/model/IItemConfig';
 import Chat from './Chat';
 import { IGeminiAiChatProps } from './IGeminiAiChatProps';
 
-const appNameChatGpt: string = 'ChatGPT';
+const appName: string = 'Gemini';
 
 const GeminiAiChat: React.FunctionComponent<IGeminiAiChatProps> = (props) => {
   const [isChatOpen, setIsChatOpen] = React.useState(false);
@@ -14,7 +14,7 @@ const GeminiAiChat: React.FunctionComponent<IGeminiAiChatProps> = (props) => {
 
   const openChat = () => {
     const config: IItemConfig = {
-      name: appNameChatGpt,
+      name: appName,
       description: strings.TextChat,
     };
     setItemConfig(config);
