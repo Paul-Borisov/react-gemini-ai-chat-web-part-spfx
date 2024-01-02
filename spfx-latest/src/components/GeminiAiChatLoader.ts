@@ -80,7 +80,7 @@ export default class GeminiAiChatLoader extends BaseClientSideWebPart<IGeminiAiC
         //apiKey: this.properties.apiKey,
         apiKey: PropertyPanePasswordField.decrypt(this.context, this.properties.apiKey),
         sharing: this.properties.sharing,
-        streaming: !!false && this.properties.streaming,
+        streaming: this.properties.streaming,
         fullScreen: this.properties.fullScreen,
         functions: this.properties.functions,
         bing: this.properties.functions && this.properties.bing,
@@ -256,10 +256,9 @@ export default class GeminiAiChatLoader extends BaseClientSideWebPart<IGeminiAiC
                   //  this.properties.storageType === StorageType.Local ? ` ${strings.FieldLabelDemoOnly}` : ''
                   //}`,
                 }),
-                !!false &&
-                  PropertyPaneCheckbox('streaming', {
-                    text: strings.FieldLabelStreaming,
-                  }),
+                PropertyPaneCheckbox('streaming', {
+                  text: strings.FieldLabelStreaming,
+                }),
                 PropertyPaneCheckbox('fullScreen', {
                   text: strings.FieldLabelFullScreen,
                 }),

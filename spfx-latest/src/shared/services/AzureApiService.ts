@@ -154,7 +154,7 @@ export default class AzureApiService {
     };
     const endpointUri =
       getEndpointUrl(this.config.endpointBaseUrl?.trim().replace(/\/+$/, '')) +
-      (isGeminiServiceUrl && this.config.apiKey ? `?key=${this.config.apiKey}` : '');
+      (isGeminiServiceUrl && this.config.apiKey ? `?${stream ? 'alt=sse&' : ''}key=${this.config.apiKey}` : '');
 
     const messages = extendedMessages ? extendedMessages : [];
     if (!messages.length) {
