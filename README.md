@@ -128,78 +128,59 @@ You will not be able to use the Private Chat sharing and People Search features 
 
    - `https://yourtenant.sharepoint.com/sites/yoursite/SitePages/yourpage.aspx?debug=true&noredir=true&debugManifestsFile=https://localhost:4321/temp/manifests.js`
 
-5. Edit the page and add the Azure OpenAI Chat web part.
+5. Edit the page and add the Gemini AI Chat web part.
 
 6. Open the web part settings and configure the minimal set of required properties as follows:
 
-   - **Client ID: create a user_impersonation app with name=openaiwp**: keep the default "zero" value or leave it empty.
+   - **Client ID: create a user_impersonation app with name=geminiaiwp**: keep the default "zero" value or leave it empty.
 
-   - **Base URL for GPT endpoint (APIM API or full)**: you can use the following alternatives:
+   - **Base URL for Gemini AU endpoint (APIM API or full)**:
+       - https://generativelanguage.googleapis.com/v1beta
+       - You must have an API key tp access the endpoints.
 
-     - Direct URL for the Azure OpenAI endpoint, configured for the deployment of GPT 3.5.
+   - **Optional api-key for Gemini AI (for troubleshooting, not for Production)**: add your api-key
 
-       - For example, https://**instance**.openai.azure.com/openai/deployments/**gpt-35-turbo-16k**/chat/completions?api-version=2023-07-01-preview
-       - You need to have an **api-key** for that instance.
+     - The key will be encrypted and stored in the web part settings (and displayed as \*\*\* in the Property Pane).
 
-     - Direct URL for the Native OpenAI endpoint.
-       - For example, https://api.openai.com/v1/chat/completions
-       - You must have an active, paid OpenAI subscription and a valid **api-key** for it.
-
-   - **Base URL for GPT4 endpoint (APIM API or full)**: you can use the following alternatives:
-
-     - Empty value if GPT-4 will not be used.
-
-     - Direct URL for the Azure OpenAI endpoint, configured for the deployment of GPT 4.
-
-       - For example, https://**instance**.openai.azure.com/openai/deployments/**gpt-4-32k**/chat/completions?api-version=2023-07-01-preview
-
-     - Direct URL for the Native OpenAI endpoint, configured as mentioned above.
-
-   - **Base URL for Chat WebApi (APIM API or full)**: keep the default empty value.
-
-   - **Optional api-key for Azure OpenAI (for troubleshooting, not for Production)**: add your api-key
-
-     - The key for Azure OpenAI or Native OpenAI, depending on your choices above.
-
-     - It will be encrypted and stored in the web part settings (and displayed as \*\*\* in the Property Pane).
-
-   - **Language Models**: If you have different models, adjust default values in the text box accordingly.
-
-   - **Storage type for chat history**: keep the default SharePoint list or select Local storage for a quick review.
+   - **Storage type for chat history**: keep the default SharePoint list.
 
    - **SharePoint list URL (leave it empty for default URL)**: leave it empty and click the Create button if you opt to use SharePoint list storage.
 
-     - This will create a custom list, dbChats, in the current site collection.
+     - This will create a custom list, dbChatsGemini, in the current site collection.
 
        - By default, the chat sharing option is disabled.
        - If you enable it using the corresponding checkbox below the field, click on the Update button to adjust the list's permissions.
-       - The used list template can be found in the [package](package/dbChats.xml).
+       - The used list template can be found in the [package](package/dbChatsGemini.xml).
 
-       - Note, if you use Local storage you will be able to review sharing features. However, real sharing between users will not work with Local storage because chat history is stored locally. The maximum capacity of Local storage is limited to 10 Mb.
+  - **Enable integrations**: select it
+    - Go to the setting **Image library URL (leave it empty for default URL)** below and click on the Create button.
+    - This will create an image library ChatsImages in the current site collection. This library will be used to store images to be processed by Gemini Pro Vision.
+      
+  - **Enable integrations**: you can unselect it after creating the image library.
 
 7. Save web part settings. Reload the page.
 
 8. Test the setup by adding any text into the prompt text area, then pressing Enter or clicking the Submit button.
    - The AI-response should appear in the content area below.
-   - Try the same steps with another language model (GPT-4).
    - Click on the upward arrow in the right-hand corner. Select any PDF file - for instance, from ./docs folder - and click OK to upload it. Click on the Submit button to summarize the uploaded PDF.
+   - Click on the upward arrow in the right-hand corner. Select any PNG or JPG file - for instance, from ./docs folder - and click OK to upload it. Click on the Submit button to analyse the uploaded image with Gemini Pro Vision.
 
 # Get Started Quickly with a prebuilt web part package
 
 - [back to the top](#table-of-content)
 
-This is the simplest and least secure standalone setup.
+This is the simplest standalone setup.
 You will not be able to use the Private Chat sharing and People Search features unless you approve the corresponding [SPFx permissions](#spfx-permissions).
 
 **Prerequisites**:
 
 - You should be a site collection administrator or hold the role of SharePoint Administrator to create a new site.
-- You should have an **api-key** for Azure OpenAI instance, with configured endpoints for text models of GPT 3.5, and optionally, GPT 4.
-  - Alternatively, you should have an **api-key** for Native OpenAI.
+- You should generate a free **API key** for Gemini AI via [Google AI Studio](https://makersuite.google.com/app/apikey).
+  - If you are in EU or UK zones, you can use any [VPN to connect](#users-in-europe-and-uk) and obtain the key.
 
 ## Configurations
 
-1. Download the latest [release package](../../releases/download/Version1.1/azure-openai-chat.sppkg) or compile it from the source code in **spfx-latest**.
+1. Download the latest [release package](../../releases/download/Version1.1/gemini-ai-chat.sppkg) or compile it from the source code in **spfx-latest**.
 
 2. Create a site collection in SharePoint Online and an App Catalog for it.
 
@@ -208,63 +189,12 @@ You will not be able to use the Private Chat sharing and People Search features 
 
 3. Upload the package into the App Catalog.
 
-   - Add the app **Azure OpenAI Chat Web Part** to the site. Please ignore the warning about the required access permissions.
+   - Add the app **Gemini AI Chat Web Part** to the site. Please ignore the warning about the required access permissions.
 
-4. Add a new Site Page and the web part **Azure OpenAI Chat** to it.
+4. Add a new Site Page and the web part **Gemini AI Chat** to it.
 
-5. Open the web part settings and configure the minimal set of required properties as follows:
-
-   - **Client ID: create a user_impersonation app with name=openaiwp**: keep the default "zero" value or leave it empty.
-
-   - **Base URL for GPT endpoint (APIM API or full)**: you can use the following alternatives:
-
-     - Direct URL for the Azure OpenAI endpoint, configured for the deployment of GPT 3.5.
-
-       - For example, https://**instance**.openai.azure.com/openai/deployments/**gpt-35-turbo-16k**/chat/completions?api-version=2023-07-01-preview
-       - You need to have an **api-key** for that instance.
-
-     - Direct URL for the Native OpenAI endpoint.
-       - For example, https://api.openai.com/v1/chat/completions
-       - You must have an active, paid OpenAI subscription and a valid **api-key** for it.
-
-   - **Base URL for GPT4 endpoint (APIM API or full)**: you can use the following alternatives:
-
-     - Empty value if GPT-4 will not be used.
-
-     - Direct URL for the Azure OpenAI endpoint, configured for the deployment of GPT 4.
-
-       - For example, https://**instance**.openai.azure.com/openai/deployments/**gpt-4-32k**/chat/completions?api-version=2023-07-01-preview
-
-     - Direct URL for the Native OpenAI endpoint, configured as mentioned above.
-
-   - **Base URL for Chat WebApi (APIM API or full)**: keep the default empty value.
-
-   - **Optional api-key for Azure OpenAI (for troubleshooting, not for Production)**: add your api-key
-
-     - The key for Azure OpenAI or Native OpenAI, depending on your choices above.
-
-     - It will be encrypted and stored in the web part settings (and displayed as \*\*\* in the Property Pane).
-
-   - **Language Models**: If you have different models, adjust default values in the text box accordingly.
-
-   - **Storage type for chat history**: keep the default SharePoint list or select Local storage for a quick review.
-
-   - **SharePoint list URL (leave it empty for default URL)**: leave it empty and click the Create button if you opt to use SharePoint list storage.
-
-     - This will create a custom list, dbChats, in the current site collection.
-
-       - By default, the chat sharing option is disabled.
-       - If you enable it using the corresponding checkbox below the field, click on the Update button to adjust the list's permissions.
-       - The used list template can be found in the [package](package/dbChats.xml).
-
-       - Note, if you use Local storage you will be able to review sharing features. However, real sharing between users will not work with Local storage because chat history is stored locally. The maximum capacity of Local storage is limited to 10 Mb.
-
-6. Save web part settings. Reload the page.
-
-7. Test the setup by adding any text into the prompt text area, then pressing Enter or clicking the Submit button.
-   - The AI-response should appear in the content area below.
-   - Try the same steps with another language model (GPT-4).
-   - Click on the upward arrow in the right-hand corner. Select any PDF file - for instance, from ./docs folder - and click OK to upload it. Click on the Submit button to summarize the uploaded PDF.
+5. Open the web part settings and configure the minimal set of required properties.
+   - Please refer to steps 6, 7, 8 from [Get Started Quickly in Visual Studio Code (DEV)](#get-started-quickly-in-visual-studio-code-dev)
 
 # More Advanced Setup
 
