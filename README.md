@@ -9,6 +9,10 @@ This is a Gemini AI Chat Web Part for SharePoint Online, offering a user experie
 Gemini AI is the latest and most capable AI model published by Google. Any data provided to endpoints of Gemini AI goes to external service locations. Gemini AI is not yet [GDPR-compliant](https://thenextweb.com/news/google-gemini-ai-unavailable-europe-uk).
 - RESTful endpoints of Gemini AI can be accessed using a free API key generated via [Google AI Studio](https://makersuite.google.com/app/apikey).
 
+### Full-Scale Setup
+
+![Data access diagram](docs/data-access-diagram.png "Data access diagram")
+
 **Key features**
 - Default support of Gemini Pro and Gemini Pro Vision
 - Chat history stored into a SharePoint Custom List with the optional data encryption (off by default)
