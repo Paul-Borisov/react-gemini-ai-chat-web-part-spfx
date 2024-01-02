@@ -136,7 +136,7 @@ export default class AzureApiService {
     const getEndpointUrl = (baseUrl: string): string => {
       let targetUrl: string;
       if (isGeminiServiceUrl) {
-        // Full endpoint URL like https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision
+        // Full endpoint URL like https://generativelanguage.googleapis.com/v1/models/gemini-pro-vision
         targetUrl = `${baseUrl}/models/gemini-pro${isVision ? '-vision' : ''}:${
           stream ? 'streamGenerateContent' : 'generateContent'
         }`;
@@ -153,8 +153,7 @@ export default class AzureApiService {
       return targetUrl;
     };
     const endpointUri =
-      getEndpointUrl(this.config.endpointBaseUrl?.trim().replace(/\/+$/, '')) +
-      (isGeminiServiceUrl && this.config.apiKey ? `?${stream ? 'alt=sse&' : ''}key=${this.config.apiKey}` : '');
+      getEndpointUrl(this.config.endpointBaseUrl?.trim().replace(/\/+$/, '')) + (isGeminiServiceUrl && stream ? 'alt=sse' : '');
 
     const messages = extendedMessages ? extendedMessages : [];
     if (!messages.length) {
@@ -206,6 +205,7 @@ export default class AzureApiService {
     if (!stream) {
       const requestHeaders: Headers = new Headers();
       requestHeaders.append('content-type', 'application/json');
+      if (isGeminiServiceUrl && this.config.apiKey) requestHeaders.append('X-Goog-Api-Key', this.config.apiKey);
 
       const postOptions: IHttpClientOptions = {
         headers: requestHeaders,
@@ -263,6 +263,8 @@ export default class AzureApiService {
         accept: 'text/event-stream',
         'content-type': 'application/json',
       };
+      if (isGeminiServiceUrl && this.config.apiKey) requestHeaders['X-Goog-Api-Key'] = this.config.apiKey;
+
       if (this.authenticate && isApiManagementUrl) {
         const aadToken = await PageContextService.context.aadTokenProviderFactory
           .getTokenProvider()
