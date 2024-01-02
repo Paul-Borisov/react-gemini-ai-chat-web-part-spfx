@@ -1,12 +1,12 @@
 # Gemini AI Chat web part
 
 This is a Gemini AI Chat Web Part for SharePoint Online, offering a user experience that is similar to [Azure OpenAI Chat Web Part](https://github.com/Paul-Borisov/Azure-OpenAI-Chat-Webpart), which I published earlier.
-- SPFx 1.18, React, Gemini AI Pro / Pro Vision, optional Azure API Management configurations to resolve Gemini AI access restrictions for European locations (as of December 2023).
+- SPFx 1.18, React, Gemini AI Pro / Pro Vision, optional Azure API Management configurations to resolve Gemini AI access restrictions for European locations (as of January 2024).
 - The setup and configurations are similar to Azure OpenAI Chat Web Part.
 
 **Data Privacy**
 
-Gemini AI is the latest and most capable AI model published by Google. Any data provided to endpoints of Gemini AI goes to US service locations. Gemini AI is not yet [GDPR-compliant](https://thenextweb.com/news/google-gemini-ai-unavailable-europe-uk).
+Gemini AI is the latest and most capable AI model published by Google. Any data provided to endpoints of Gemini AI goes to external service locations. Gemini AI is not yet [GDPR-compliant](https://thenextweb.com/news/google-gemini-ai-unavailable-europe-uk).
 - RESTful endpoints of Gemini AI can be accessed using a free API key generated via [Google AI Studio](https://makersuite.google.com/app/apikey).
 
 **Key features**
@@ -42,7 +42,7 @@ The integrations available in the first release include:
 
 **Users in Europe and UK**
 
-As of December 2023, users from European and UK locations do not have direct access to Google AI Studio.
+As of January 2024, users from European and UK locations do not have direct access to Google AI Studio.
 - To obtain the API key from those locations, you can use any VPN service to connect to permitted ones like US.
 - To access the endpoints with the API key from restricted locations you should also use a VPN connection, which is not convenient.
 
