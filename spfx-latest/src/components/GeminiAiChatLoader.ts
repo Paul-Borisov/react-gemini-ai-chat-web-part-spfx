@@ -80,7 +80,7 @@ export default class GeminiAiChatLoader extends BaseClientSideWebPart<IGeminiAiC
         //apiKey: this.properties.apiKey,
         apiKey: PropertyPanePasswordField.decrypt(this.context, this.properties.apiKey),
         sharing: this.properties.sharing,
-        streaming: this.properties.streaming,
+        streaming: !!false && this.properties.streaming,
         fullScreen: this.properties.fullScreen,
         functions: this.properties.functions,
         bing: this.properties.functions && this.properties.bing,
