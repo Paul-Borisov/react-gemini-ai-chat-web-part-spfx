@@ -42,7 +42,7 @@ The integrations available in the first release include:
 - Local Date and Time
 - Search on the Internet: Bing and Google (+ Reddit).
   - The configuration is supported in two alternatives:
-    - 1. Using the additional APIM-endpoints https://**apiminatance**.azure-api.net/**bing** and/or https://**apiminatance**.azure-api.net/**google**
+    - 1. Using the additional APIM-endpoints https://**resource**.azure-api.net/**bing** and/or https://**resource**.azure-api.net/**google**
     - 2. Using the direct Bing and Google endpoints with own **api-key** values stored in the web part settings (less secure).
 
 ## Users in Europe and UK
