@@ -72,7 +72,7 @@ Chats are private and visible only to their creators. Creators have the option t
 
 In the simplest case, you can also use direct access to Gemini AI endpoints, configured with an API key explicitly stored in the web part properties.
 - Base URL for Gemini AI: https://generativelanguage.googleapis.com/v1beta
-  - v1beta prodides the optional Function Calling feature of Gemini Pro while v1 does not include it yet.
+  - v1beta provides the optional Function Calling feature of Gemini Pro while v1 does not include it yet.
 - **This setup, while the least secure, can provide a quicker start.** It is not recommended for production use, but it can be used for quick tests or in situations where you do not have access to Azure API Management.
 - The stored key is encrypted in the web part properties and displayed as \*\*\* in the Property Pane.
   However, it will travel in browser requests and can be viewed within the DEV tools > Network > Request headers.
