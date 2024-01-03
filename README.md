@@ -275,3 +275,23 @@ You will not be able to use the Private Chat sharing and People Search features 
    - The AI-response should appear in the content area below.
    - Click on the upward arrow in the right-hand corner. Select any PDF file - for instance, from ./docs folder - and click OK to upload it. Click on the Submit button to summarize the uploaded PDF.
    - Click on the upward arrow in the right-hand corner. Select any image file - for instance, from ./docs folder - and click OK to upload it. Click on the Submit button to make the analysis of the uploaded image.
+
+# Notes on npm install and associated warnings
+
+- [back to the top](#table-of-content)
+
+The reference: [Don't be alarmed by vulnerabilities after running NPM Install](https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install)
+
+When working with SPFx solutions, it is important to note that npm packages are not deployed to SharePoint. Therefore, any audit warnings related to these packages can be disregarded in the context of SPFx solutions.
+
+### Auxiliary modules
+
+In addition to the standard set of modules employed by SPFx 1.18 with React base, the project includes references to the following additional libraries:
+
+- @fluentui/react: Provided by Microsoft for building a richer UI experience.
+- @microsoft/fetch-event-source: Used to implement Consecutive Event Streaming. It is used only when the web part setting **Event streaming** is enabled (default).
+- crypto-js, @types/crypto-js: These are used to encrypt and decrypt an api-key when the user explicitly adds it to web part settings. This is not required in the default APIM-based setup.
+- react-pdf: Used to extract text from uploaded PDFs. It is used only when the web part setting **Enable integrations** is turned on (off by default).
+- react-syntax-highlighter: Adds code highlighting capabilities. It is used only when the web part setting **Code highlighting** is enabled (default).
+- react-speech-recognition with regenerator-runtime: these libraries use Web Speech API and provides the advanced capabilities for the Voice input feature.
+- prettier, fast-serve: These development tools are used exclusively in the development environment.
