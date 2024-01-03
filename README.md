@@ -211,7 +211,7 @@ You will not be able to use the Private Chat sharing and People Search features 
 
 - You should generate a free **API key** for Gemini AI via [Google AI Studio](https://makersuite.google.com/app/apikey).
   - If you are in EU or UK zones, you can use any [VPN to connect](#users-in-europe-and-uk) and obtain the key.
-  - For detailed instructions on configuring APIM endpoints for Gemini AI, please refer to the project documentation in [gemini-ai-chat-web-part.pdf](docs/gemini-chat-web-part.pdf) (pages 15-26).
+  - For detailed instructions on configuring APIM endpoints for Gemini AI, please refer to the project documentation in [gemini-ai-chat-web-part.pdf](docs/gemini-ai-chat-web-part.pdf) (pages 15-26).
 
 ## Configurations
 
@@ -263,7 +263,7 @@ You will not be able to use the Private Chat sharing and People Search features 
     - Go to the setting **Image library URL (leave it empty for default URL)** below and click on the Create button.
     - This will create an image library ChatsImages in the current site collection. This library will be used to store images to be processed by Gemini Pro Vision.
       
-  - **Bing search** and **Google search**: please refer to the project documentation in [gemini-ai-chat-web-part.pdf](docs/gemini-chat-web-part.pdf) to configure these advanced options.
+  - **Bing search** and **Google search**: please refer to the project documentation in [gemini-ai-chat-web-part.pdf](docs/gemini-ai-chat-web-part.pdf) to configure these advanced options.
 
 8. Save web part settings. Reload the page.
 
