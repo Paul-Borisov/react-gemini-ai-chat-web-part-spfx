@@ -90,13 +90,13 @@ In the simplest case, you can also use direct access to Gemini AI endpoints, con
 
 ### User Interface
 
-![User Interface](docs/full-screen-mode.png "User Interface")
+![Settings](docs/webpart-settings.png "Settings")
 
-![PDF Analysis: upload a PDF and summarize its content](docs/pdf-analysis.png "PDF Analysis: upload a PDF and summarize its content")
+![User Interface](docs/user-interface.png "User Interface")
 
-![Image Analysis is only available with the Native OpenAI endpoint](docs/image-analysis.png "Image Analysis is only available with the Native OpenAI endpoint")
+![Code Highlighting](docs/user-interface-2.png "Code Highlighting")
 
-![Integration with Internet (available in Beta 1.1)](docs/internet-integration.png "Integration with Internet (available in Beta 1.1)")
+![Image Analysis](docs/image-analysis.png "Image Analysis")
 
 # Get Started Quickly in Visual Studio Code (DEV)
 
