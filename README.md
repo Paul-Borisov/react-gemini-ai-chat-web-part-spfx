@@ -48,7 +48,7 @@ The integrations available in the first release include:
 ## Users in Europe and UK
 
 As of January 2024, users from European and UK locations do not have direct access to Google AI Studio.
-- To obtain the API key from those locations, you can use any VPN service to connect to permitted ones like US.
+- To obtain the API key from those locations, you can use any VPN service to connect to permitted regions like US.
 - To access the endpoints with the API key from restricted locations you should also use a VPN connection, which is not convenient.
 
 **Configuration**
