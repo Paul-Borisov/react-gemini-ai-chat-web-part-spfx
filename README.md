@@ -140,7 +140,7 @@ You will not be able to use the Private Chat sharing and People Search features 
        - https://generativelanguage.googleapis.com/v1beta
        - You must have an API key tp access the endpoints.
 
-   - **Optional api-key for Gemini AI (for troubleshooting, not for Production)**: add your api-key
+   - **Optional api-key for Gemini AI**: add your API key
 
      - The key will be encrypted and stored in the web part settings (and displayed as \*\*\* in the Property Pane).
 
