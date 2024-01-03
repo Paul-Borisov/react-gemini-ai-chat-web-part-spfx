@@ -13,6 +13,8 @@ Gemini AI is the latest and most capable AI model published by Google. Any data 
 
 ![Data access diagram](docs/data-access-diagram.png "Data access diagram")
 
+[PDF Documentation](docs/gemini-ai-chat-web-part.pdf)
+
 **Key features**
 - [Presentation](docs/gemini-ai-chat-web-part-presentation.pdf)
 - Default support of Gemini Pro and Gemini Pro Vision
