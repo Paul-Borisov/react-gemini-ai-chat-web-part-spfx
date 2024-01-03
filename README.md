@@ -23,7 +23,7 @@ Gemini AI is the latest and most capable AI model published by Google. Any data 
 - Integration with Azure API Management Service to provide seamless access from European and UK locations; more details are provided below.
 - Global and Private Chat Sharing for selected Azure AD accounts
 - Full-Screen Mode
-- Event Streaming
+- Consequtive Event Streaming
 - Code Highlighting with Configurable Styles
 - Unlimited Length of Chat History (Configurable)
 - Upper and Lower side positioning for the Prompt Text Area
