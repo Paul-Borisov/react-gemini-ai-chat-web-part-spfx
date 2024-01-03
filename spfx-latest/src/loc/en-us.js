@@ -1,11 +1,11 @@
 define([], function () {
   return {
     BasicGroupName: 'Settings',
-    FieldLabelApiKey: 'Optional api-key for Gemini AI (for troubleshooting, not for Production)',
+    FieldLabelApiKey: 'Optional API key for Gemini AI (for troubleshooting, not for Production)',
     FieldLabelApiKeyPlaceholder: 'Add if you use direct endpoints to services',
     FieldLabelAppId: 'Client ID: create a user_impersonation app with name=geminiaiwp',
     FieldLabelBing: 'Bing search',
-    FieldLabelBingApiKey: 'Optional api-key for Bing',
+    FieldLabelBingApiKey: 'Optional API key for Bing',
     FieldLabelBingApiKeyPlaceholder: 'Add if APIM endpoint is not configured',
     FieldLabelEndpointBaseUrlForChatHistory: 'Base URL for Chat WebApi (APIM API or full)',
     FieldLabelendpointBaseUrl: 'Base URL for Gemini AI (APIM API or full)',

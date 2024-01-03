@@ -48,7 +48,6 @@ export default class FunctionHelper {
     searchOnBing: this.searchOnInternet,
     searchOnGoogle: this.searchOnGoogle,
     emptyFunction: this.emptyFunction,
-    //generateImage: this.generateImage,
   };
 
   public async call(allFunctions: IFunctionCalling[], apiService: AzureApiService, payload: IItemPayload): Promise<string[]> {
@@ -226,16 +225,6 @@ export default class FunctionHelper {
 
     return Promise.resolve(data);
   }
-
-  /*
-  private async generateImage(args: { queryText: string; apiService: AzureApiService; payload: IItemPayload }): Promise<string> {
-    const svc = args.payload?.services?.find((s) => s.name === FunctionServices.image);
-    const service = new ImageService(args.apiService, svc.storageUrl);
-    const data = await service.callQueryImage(args.queryText);
-
-    return Promise.resolve(data);
-  }
-  */
 
   public init(options: FunctionCallingOptions, services: IFunctionService[], tools: any[]): IFunctionCalling[] {
     if (!options || !tools) return undefined;

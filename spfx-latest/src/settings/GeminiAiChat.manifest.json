@@ -21,10 +21,10 @@
     "group": { "default": "Advanced" },
     "title": { "default": "Gemini AI Chat" },
     "description": { "default": "Gemini AI Chat web part" },
-    "officeFabricIconFontName": "Page",
+    "iconImageUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgZmlsbD0ibm9uZSI+CiAgICAgICAgPHBhdGgKICAgICAgICAgIGQ9Ik0xMjggMjU2QzEyOCAyMzguMjkzIDEyNC41ODcgMjIxLjY1MyAxMTcuNzYgMjA2LjA4QzExMS4xNDcgMTkwLjUwNyAxMDIuMDggMTc2Ljk2IDkwLjU2IDE2NS40NEM3OS4wNCAxNTMuOTIgNjUuNDkzMyAxNDQuODUzIDQ5LjkyIDEzOC4yNEMzNC4zNDY3IDEzMS40MTMgMTcuNzA2NyAxMjggMCAxMjhDMTcuNzA2NyAxMjggMzQuMzQ2NyAxMjQuNjkzIDQ5LjkyIDExOC4wOEM2NS40OTMzIDExMS4yNTMgNzkuMDQgMTAyLjA4IDkwLjU2IDkwLjU2QzEwMi4wOCA3OS4wNCAxMTEuMTQ3IDY1LjQ5MzMgMTE3Ljc2IDQ5LjkyQzEyNC41ODcgMzQuMzQ2NyAxMjggMTcuNzA2NyAxMjggMEMxMjggMTcuNzA2NyAxMzEuMzA3IDM0LjM0NjcgMTM3LjkyIDQ5LjkyQzE0NC43NDcgNjUuNDkzMyAxNTMuOTIgNzkuMDQgMTY1LjQ0IDkwLjU2QzE3Ni45NiAxMDIuMDggMTkwLjUwNyAxMTEuMjUzIDIwNi4wOCAxMTguMDhDMjIxLjY1MyAxMjQuNjkzIDIzOC4yOTMgMTI4IDI1NiAxMjhDMjM4LjI5MyAxMjggMjIxLjY1MyAxMzEuNDEzIDIwNi4wOCAxMzguMjRDMTkwLjUwNyAxNDQuODUzIDE3Ni45NiAxNTMuOTIgMTY1LjQ0IDE2NS40NEMxNTMuOTIgMTc2Ljk2IDE0NC43NDcgMTkwLjUwNyAxMzcuOTIgMjA2LjA4QzEzMS4zMDcgMjIxLjY1MyAxMjggMjM4LjI5MyAxMjggMjU2WiIKICAgICAgICAgIGZpbGw9InVybCgjcGFpbnQwX3JhZGlhbF84OTdfMzgpIgogICAgICAgIC8+CiAgICAgICAgPGRlZnM+CiAgICAgICAgICA8cmFkaWFsR3JhZGllbnQKICAgICAgICAgICAgaWQ9InBhaW50MF9yYWRpYWxfODk3XzM4IgogICAgICAgICAgICBjeD0iMCIKICAgICAgICAgICAgY3k9IjAiCiAgICAgICAgICAgIHI9IjEiCiAgICAgICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgICAgICBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDI1Nikgcm90YXRlKDEzNSkgc2NhbGUoMzYyLjAzOSAxODEuMDE5KSIKICAgICAgICAgID4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwLjMyNTQyNyIgc3RvcC1jb2xvcj0iI0ZGRERCNyIgLz4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwLjcwNTk2IiBzdG9wLWNvbG9yPSIjMDc2RUZGIiAvPgogICAgICAgICAgPC9yYWRpYWxHcmFkaWVudD4KICAgICAgICA8L2RlZnM+CiAgICAgIDwvc3ZnPg==",
     "properties": {
       "appId": "00000000-0000-0000-0000-000000000000", //Like 6ee7b6ff-dff5-411a-af40-fdc0b4ff19c7
-      "endpointBaseUrl": "https://tenant.azure-api.net/geminiai",
+      "endpointBaseUrl": "https://generativelanguage.googleapis.com/v1beta", //"https://instance.azure-api.net/geminiai",
       "spListUrl": "", // Default location when value is empty: https://<currentweburl>/Lists/dbChatsGemini
       "apiKey": "",
       "sharing": false,
@@ -33,7 +33,7 @@
       "functions": false,
       "highlight": true,
       "highlightStyles": true,
-      "highlightStyleDefault": "stackoverflowDark",
+      "highlightStyleDefault": "vs2015",
       "storageType": "splist",
       "promptAtBottom": false,
       "unlimitedHistoryLength": false,
