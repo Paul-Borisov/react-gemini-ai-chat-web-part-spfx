@@ -211,6 +211,7 @@ You will not be able to use the Private Chat sharing and People Search features 
 
   - In the role of Entra Application Administrator (Application Developer) or Global Administrator to create App registrations and approve permissions.
   - A site collection administrator or hold the role of SharePoint Administrator to create a new site.
+  - You should have the ability to configure API Management service.
 
 - You should generate a free **API key** for Gemini AI via [Google AI Studio](https://makersuite.google.com/app/apikey).
   - If you are in EU or UK zones, you can use any [VPN to connect](#users-in-europe-and-uk) and obtain the key.
