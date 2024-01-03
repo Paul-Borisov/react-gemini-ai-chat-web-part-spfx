@@ -90,13 +90,13 @@ In the simplest case, you can also use direct access to Gemini AI endpoints, con
 
 ### User Interface
 
-![Settings](docs/webpart-settings.png "Settings")
-
 ![User Interface](docs/user-interface.png "User Interface")
 
 ![Code Highlighting](docs/user-interface-2.png "Code Highlighting")
 
 ![Image Analysis](docs/image-analysis.png "Image Analysis")
+
+![Settings](docs/webpart-settings.png "Settings")
 
 # Get Started Quickly in Visual Studio Code (DEV)
 
