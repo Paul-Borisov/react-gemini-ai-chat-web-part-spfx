@@ -269,17 +269,22 @@ $action-color: $dark;
     border: 1px #ccc solid;
     border-radius: 8px;
     height: 34px;
-    padding: 15px 15px 0 15px;
+    padding: 15px 15px 0 60px;
     @include scrollbars(1.4ex, $ms-color-gray120, rgba(0, 0, 0, 0.2));
     z-index: 10;
+    &.noLeftMargin {
+      padding-left: 15px;
+    }
+    &.shortLeftMargin {
+      padding-left: 35px;
+    }
   }
   .linkButton {
     flex: 0 0 35px;
     height: 35px;
     border-radius: $border-radius;
     margin-left: 10px !important; // Enforce overwriting styles of default linkbutton
-    background-color: $action-color !important;
-    background-color: $action-color;
+    background-color: $ms-color-black !important;
     text-align: center !important;
     &.disabled {
       opacity: $disabled-opacity;
@@ -293,6 +298,9 @@ $action-color: $dark;
     &:focus {
       background-color: $hover-color;
     }
+  }
+  i {
+    color: #000;
   }
 }
 .requestCharsCount {

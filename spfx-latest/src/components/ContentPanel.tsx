@@ -286,14 +286,7 @@ const ContentPanel: FunctionComponent<IContentPanelProps> = ({ props }) => {
       setPdfFileContent
     );
 
-    const ribbonBar = elements.getRibbonBar(
-      stopSignal,
-      signalReload,
-      isStreamProgress,
-      fileUpload,
-      setIsStreamProgress,
-      setSignalReload
-    );
+    const ribbonBar = elements.getRibbonBar(stopSignal, signalReload, isStreamProgress, setIsStreamProgress, setSignalReload);
 
     const panelContentPane = elements.getPanelContentPane(refContentPane, chatHistory, isCustomPanelOpen, rows, isProgress);
 
@@ -308,7 +301,8 @@ const ContentPanel: FunctionComponent<IContentPanelProps> = ({ props }) => {
       resizePrompt,
       setPrompt,
       submitPayload,
-      ribbonBar
+      ribbonBar,
+      fileUpload
     );
 
     const contentArea = elements.getContentArea(responseContentError, panelContentPane, promptContainer);
